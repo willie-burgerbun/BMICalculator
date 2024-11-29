@@ -1,23 +1,31 @@
+//Calculate BMI and determine if the person is noral, below normal or above normal
 import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-
+    Scanner scanner = new Scanner(System.in); 
+    
+    //Prompt the user to enter their weight in pounds
     System.out.print("Enter your weight in pounds:  ");
     double weight = scanner.nextDouble();
     
+    //Prompt the user to enter their height in feet
     System.out.print("Enter your height - feet:  ");
     int feet = scanner.nextInt();
-
+    
+    //Prompt the user to enter their height in inches
     System.out.print("Enter you height - inches:  "); 
     int inches = scanner.nextInt(); 
-
+    
+    //Calculate the total inches 
     int totalInches = (feet * 12) + inches;
-
+    
+    //Calculate the BMI
     double bmi = (weight / Math.pow(totalInches, 2)) * 703;
-
+    
+    //Display BMI
     System.out.printf("Your BMI is : %.2f\n", bmi);
-
+    
+    //Determine if the person is normal, below normal or above normal range
     if(bmi >= 18.5 && bmi <= 24.9)
       System.out.println("Normal");
     else if(bmi < 18.5)
@@ -25,6 +33,6 @@ public class Main {
     else
     System.out.println("Above Normal");
 
-   scanner.close();     
+   scanner.close();//Close the scanner     
   }
 }
